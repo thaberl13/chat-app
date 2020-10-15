@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import { useEffect, useRef, useState } from "react";
-import { useAuthState } from 'react-firebase-hooks';
-import { useCollectionData } from 'react-firebase-hooks';
+import firebase from 'firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+import SignIn from '../src/Components/SignIn';
+import ChatRoom from '../src/Components/Chatroom';
+import SignOut from '../src/Components/SignOut'
+require('firebase/auth')
 
-firebase.initializeApp({
 
-})
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -21,6 +24,11 @@ const [user] = useAuthState(auth);
       <header>
        <h1>Chat App</h1>
       </header>
+
+      <section>
+        {user ? <ChatRoom auth={auth} /> : <SignIn user={user}/>}
+        <SignOut/>
+      </section>
 
   </div>
   )
