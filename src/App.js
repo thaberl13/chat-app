@@ -7,13 +7,15 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import SignIn from "../src/Components/SignIn";
 import ChatRoom from "../src/Components/Chatroom";
 import SignOut from "../src/Components/SignOut";
-require("firebase/auth");
+import "firebase/auth";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
   const [user] = useAuthState(auth);
+
+  console.log(user)
 
   return (
     <div className="App">

@@ -1,36 +1,59 @@
-import React from 'react'
-import { useState } from 'react';
-import ChatMessage from './ChatMessage'
+import React from "react";
+import { useState, useRef, useEffect } from "react";
+import ChatMessage from "./ChatMessage";
 import firebase from "firebase";
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import photoURL from './ChatMessage'
-
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import photoURL from "./ChatMessage";
+import { auth } from "firebase/auth";
 
 export default function Chatroom({ auth }) {
-const firestore = firebase.firestore();
-const messagesRef = firestore.collection('messages');
-const query = messagesRef.orderBy('createdAt').limitToLast(25);
+  const dummy = useRef();
+  const firestore = firebase.firestore();
+  const messagesRef = firestore.collection("messages");
+  const query = messagesRef.orderBy("createdAt").limitToLast(25);
+  const [messages] = useCollectionData(query, { idField: "id" });
+  const [formValue, setFormValue] = useState("");
 
+  const sendMessage = async (e) => {
+    e.preventDefault();
 
-const [messages] = useCollectionData(query, {idField: 'id'});
+    const { uid, photoURL } = auth.currentUser;
 
-const [formValue, setFormValue] = useState('');
+    await messagesRef.add({
+      text: formValue,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      uid,
+      photoURL,
+    });
 
-const sendMessage = async (e) => {
-  e.preventDefault();
+    setFormValue("");
+  };
 
-  const { uid, photoURL } = auth.currentUser;
-
-}
-
-
-
+  useEffect(() => {
+    dummy.current.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   return (
-    <main>
-      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
+    <main id="chat-room">
+      <form onSubmit={sendMessage}>
+      {messages &&
+        messages.map((msg) => (
+          <ChatMessage
+          currentUser={auth.currentUser}
+          key={msg.id}
+          message={msg}
+          />
+          ))}
+          <input
+            value={formValue}
+            onChange={(e) => setFormValue(e.target.value)}
+            placeholder="Send a message"
+          ></input>
+          <button type="submit" disabled={!formValue}>
+            💬
+          </button>
+        </form>
+      <span ref={dummy}></span>
     </main>
-  )
+  );
 }
-
-

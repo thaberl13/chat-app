@@ -1,16 +1,17 @@
 import React from "react";
 import { auth } from "firebase";
+import currentUser from './Chatroom.jsx'
 
-export default function ChatMessage(props) {
+
+export default function ChatMessage(props, {auth, currentUser}) {
   const { text, uid, photoUrl } = props.message;
+  const messageClass = uid === currentUser ? "sent" : "received";
 
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
 
   return (
     <div className={`message ${messageClass}`}>
       <img src={photoUrl} />
       <p>{text}</p>
-      <h1>Chat Message</h1>
     </div>
   );
 }
