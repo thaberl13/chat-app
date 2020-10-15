@@ -25,7 +25,6 @@ function App() {
 
       <section>
         {user ? <ChatRoom auth={auth} /> : <SignIn user={user} />}
-        <SignOut />
       </section>
     </div>
   );
