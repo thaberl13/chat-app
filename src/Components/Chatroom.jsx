@@ -50,11 +50,11 @@ export default function Chatroom({ auth }) {
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Send a message"
           ></input>
-          <button type="submit" disabled={!formValue}>
+          <button id="send-message-button" type="submit" disabled={!formValue}>
             💬
           </button>
-          <SignOut/>
         </form>
+          <SignOut/>
       <span ref={dummy}></span>
     </main>
   );

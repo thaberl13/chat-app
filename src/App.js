@@ -15,12 +15,11 @@ const firestore = firebase.firestore();
 function App() {
   const [user] = useAuthState(auth);
 
-  console.log(user)
 
   return (
     <div className="App">
       <header>
-        <h1>Chat App</h1>
+        <h1>Chat 💬</h1>
       </header>
 
       <section>
