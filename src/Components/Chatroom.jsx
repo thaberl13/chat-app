@@ -6,8 +6,9 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import photoURL from "./ChatMessage";
 import { auth } from "firebase/auth";
 import SignOut from "./SignOut"
+import user from '../App' 
 
-export default function Chatroom({ auth }) {
+export default function Chatroom({ auth, user }) {
   const dummy = useRef();
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection("messages");
@@ -36,10 +37,12 @@ export default function Chatroom({ auth }) {
 
   return (
     <main >
+      <div ref={dummy}/>
       <form id="chat-room" onSubmit={sendMessage}>
       {messages &&
         messages.map((msg) => (
           <ChatMessage 
+          user={user}
           currentUser={auth.currentUser}
           key={msg.id}
           message={msg}
@@ -54,7 +57,6 @@ export default function Chatroom({ auth }) {
             💬
           </button>
         </form>
-          <SignOut/>
       <span ref={dummy}></span>
     </main>
   );
