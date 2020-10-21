@@ -22,10 +22,18 @@ code {
   width: 400px; 
   flex-flow: wrap;
   overflow-y:scroll;
-  background: rgb(58, 58, 58);
+  background: rgb(0, 0, 0);
   position: absolute;
   left: 25%;
-  top: 200%;
+  top: 160%;
+}
+
+#navbar{
+margin-left: 2px;
+}
+
+.input-send-button{
+  display: flex;
 }
 
 
@@ -33,14 +41,28 @@ code {
   font-family: 'Press Start 2P', cursive;
   width: 20%;
   background-color:red;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 input{
+  cursor: pointer;
   font-family: 'Press Start 2P', cursive;
   line-height: 1.5;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: .75rem;
   background: rgb(50, 50, 50);
+  color: white;
+  padding: 0 10px;
+}
+
+input:hover{
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.5;
+  width: 100%;
+  font-size: .9rem;
+  background:gray;
   color: white;
   outline: none;
   border: none;

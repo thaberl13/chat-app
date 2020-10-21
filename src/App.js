@@ -19,9 +19,9 @@ function App() {
 console.log(user)
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar id="navbar"/>
       <header>
-        <h1>Chat 💬</h1>
+        <h1>Let's Chat 💬</h1>
       </header>
       <section>
         {user ? <ChatRoom auth={auth} user={user} /> : <SignIn user={user} />}

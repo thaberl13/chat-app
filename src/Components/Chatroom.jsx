@@ -7,6 +7,7 @@ import photoURL from "./ChatMessage";
 import { auth } from "firebase/auth";
 import SignOut from "./SignOut"
 import user from '../App' 
+import moment from 'moment';
 
 export default function Chatroom({ auth, user }) {
   const dummy = useRef();
@@ -48,6 +49,7 @@ export default function Chatroom({ auth, user }) {
           message={msg}
           />
           ))}
+          <div className="input-send-button">
           <input
             value={formValue}
             onChange={(e) => setFormValue(e.target.value)}
@@ -56,6 +58,7 @@ export default function Chatroom({ auth, user }) {
           <button id="send-message-button" type="submit" disabled={!formValue}>
             💬
           </button>
+          </div>
         </form>
       <span ref={dummy}></span>
     </main>
