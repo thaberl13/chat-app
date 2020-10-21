@@ -13,8 +13,8 @@ code {
 }
 
 #chat-room{
-  font-size: 1.25rem;
-  color: white;
+  font-size: .75rem;
+  color: red;
   border: 1px solid #000000;
   text-align: left;
   border-radius: 10px;	
@@ -23,15 +23,20 @@ code {
   flex-flow: wrap;
   overflow-y:scroll;
   background: rgb(58, 58, 58);
+  position: absolute;
+  left: 25%;
+  top: 200%;
 }
 
 
 #send-message-button{
+  font-family: 'Press Start 2P', cursive;
   width: 20%;
-  background-color: rgb(140, 140, 243);
+  background-color:red;
 }
 
 input{
+  font-family: 'Press Start 2P', cursive;
   line-height: 1.5;
   width: 100%;
   font-size: 1.25rem;
