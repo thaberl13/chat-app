@@ -10,6 +10,7 @@ import NavBar from "../src/Components/NavBar";
 import "firebase/auth";
 import user from './App' 
 
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
