@@ -8,8 +8,7 @@ import SignIn from "../src/Components/SignIn";
 import ChatRoom from "../src/Components/Chatroom";
 import NavBar from "../src/Components/NavBar";
 import "firebase/auth";
-import user from './App' 
-
+import user from "./App";
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -17,10 +16,9 @@ const firestore = firebase.firestore();
 function App() {
   const [user] = useAuthState(auth);
 
-console.log(user)
   return (
     <div className="App">
-      <NavBar id="navbar"/>
+      <NavBar id="navbar" />
       <header>
         <h1>Let's Chat 💬</h1>
       </header>

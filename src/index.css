@@ -8,62 +8,61 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-#chat-room{
-  font-size: .75rem;
+#chat-room {
+  font-size: 0.75rem;
   color: red;
   border: 1px solid #000000;
   text-align: left;
-  border-radius: 10px;	
+  border-radius: 10px;
   height: 600px;
-  width: 400px; 
+  width: 400px;
   flex-flow: wrap;
-  overflow-y:scroll;
+  overflow-y: scroll;
   background: rgb(0, 0, 0);
   position: absolute;
   left: 25%;
   top: 160%;
-  Box-shadow:0 30px 10px rgba(0,0,0,0.19), 0 10px 10px rgba(0,0,0,0.23);
+  box-shadow: 0 30px 10px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23);
 }
 
-#navbar{
-margin-left: 2px;
+#navbar {
+  margin-left: 2px;
 }
 
-.input-send-button{
+.input-send-button {
   display: flex;
 }
 
-
-#send-message-button{
-  font-family: 'Press Start 2P', cursive;
+#send-message-button {
+  font-family: "Press Start 2P", cursive;
   width: 20%;
-  background-color:red;
+  background-color: red;
   border-radius: 5px;
   cursor: pointer;
 }
 
-input{
+input {
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   line-height: 1.5;
   width: 100%;
-  font-size: .75rem;
+  font-size: 0.75rem;
   background: rgb(50, 50, 50);
   color: white;
   padding: 0 10px;
 }
 
-input:hover{
+input:hover {
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   line-height: 1.5;
   width: 100%;
-  font-size: .9rem;
-  background:gray;
+  font-size: 0.9rem;
+  background: gray;
   color: white;
   outline: none;
   border: none;

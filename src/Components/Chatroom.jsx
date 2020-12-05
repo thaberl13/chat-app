@@ -5,9 +5,9 @@ import firebase from "firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import photoURL from "./ChatMessage";
 import { auth } from "firebase/auth";
-import SignOut from "./SignOut"
-import user from '../App' 
-import moment from 'moment';
+import SignOut from "./SignOut";
+import user from "../App";
+import moment from "moment";
 
 export default function Chatroom({ auth, user }) {
   const dummy = useRef();
@@ -37,19 +37,19 @@ export default function Chatroom({ auth, user }) {
   }, [messages]);
 
   return (
-    <main >
-      <div ref={dummy}/>
+    <main>
+      <div ref={dummy} />
       <form id="chat-room" onSubmit={sendMessage}>
-      {messages &&
-        messages.map((msg) => (
-          <ChatMessage 
-          user={user}
-          currentUser={auth.currentUser}
-          key={msg.id}
-          message={msg}
-          />
+        {messages &&
+          messages.map((msg) => (
+            <ChatMessage
+              user={user}
+              currentUser={auth.currentUser}
+              key={msg.id}
+              message={msg}
+            />
           ))}
-          <div className="input-send-button">
+        <div className="input-send-button">
           <input
             value={formValue}
             onChange={(e) => setFormValue(e.target.value)}
@@ -58,8 +58,8 @@ export default function Chatroom({ auth, user }) {
           <button id="send-message-button" type="submit" disabled={!formValue}>
             💬
           </button>
-          </div>
-        </form>
+        </div>
+      </form>
       <span ref={dummy}></span>
     </main>
   );
