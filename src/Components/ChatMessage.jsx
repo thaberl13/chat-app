@@ -4,6 +4,7 @@ import currentUser from "./Chatroom.jsx";
 
 export default function ChatMessage(props, { auth, currentUser }) {
   const { text, uid, photoUrl } = props.message;
+  
   const messageClass = uid === currentUser ? "sent" : "received";
 
   return (
