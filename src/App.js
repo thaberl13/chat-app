@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import SignIn from "../src/Components/SignIn";
+import SignIn from "./Components/SignIn/SignIn";
 import ChatRoom from "../src/Components/Chatroom";
 import NavBar from "./Components/NavBar/NavBar";
 import "firebase/auth";

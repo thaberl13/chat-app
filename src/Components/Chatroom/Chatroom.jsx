@@ -5,7 +5,7 @@ import firebase from "firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import photoURL from "./ChatMessage";
 import { auth } from "firebase/auth";
-import SignOut from "../SignOut";
+import SignOut from "../SignOut/SignOut";
 import user from "../../App";
 import moment from "moment";
 
