@@ -6,7 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import SignIn from "../src/Components/SignIn";
 import ChatRoom from "../src/Components/Chatroom";
-import NavBar from "../src/Components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import "firebase/auth";
 import user from "./App";
 
