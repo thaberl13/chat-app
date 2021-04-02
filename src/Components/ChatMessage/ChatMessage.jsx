@@ -1,6 +1,6 @@
 import React from "react";
 import { auth } from "firebase";
-import currentUser from "./Chatroom.jsx";
+import currentUser from "../Chatroom.jsx";
 
 export default function ChatMessage(props, { auth, currentUser }) {
   const { text, uid, photoUrl } = props.message;
